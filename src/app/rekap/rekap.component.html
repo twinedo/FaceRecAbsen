@@ -1,0 +1,50 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <img id=img2 src="assets/img/logo_up_putih.png">
+    </div>
+    <div class="col-md-8">
+      <h2 style="text-align: center">
+              {{ title }}
+              Universitas Pertamina</h2>
+      <h4 style="text-align: center">https://siap.universitaspertamina.ac.id</h4>
+    </div>
+  </div>
+</div>
+
+<div id="box">
+  <div class="panel panel-default" style="border-radius: 10px;">
+    <div class="panel-heading" style="border-top-left-radius: 10px; border-top-right-radius: 10px; background: #D9EDF7">
+      <h3 style="text-align: center; font-weight: bold">Rekap Absen</h3>
+    </div>
+
+     <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr class="info" style="text-align: center; font-weight: bold">
+          <td>#</td>
+          <td>NIP</td>
+          <td>NAMA</td>
+          <td>Waktu</td>
+          <td>Distance</td>
+          <td>Foto</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let r of rekapan;
+        let i = index" style="text-align: center">
+            <td>{{i+1}}</td>
+            <td>{{r.id}}</td>
+            <td>{{r.nama}}</td>
+            <td>{{r.date | date:'dd MMM yyyy, HH:mm:ss'}}</td>
+            <td>{{r.distance}}</td>
+            <td><img src="https://{{r.urlGambar}}" width=120px; height=120px></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+

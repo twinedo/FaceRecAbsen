@@ -1,0 +1,75 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+<div id="body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+          <img id=img2 src="assets/img/logo_up_putih.png">
+      </div>
+      <div class="col-md-8">
+          <h2 style="text-align: center">
+              {{ title }}
+              Universitas Pertamina</h2>
+            <h4 style="text-align: center">https://siap.universitaspertamina.ac.id</h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6" align="center">
+        <div id="dashboard">
+          <h3 style='text-align: center'>
+            <h4><b>Date and Time</b></h4>
+            {{date | date: "dd MMM, yyyy"}} |
+            {{date | date: "HH:mm:ss"}}
+          </h3>
+          <div id="kamera">
+            <webcam [height]="400" [width]="400" [trigger]="triggerObservable"
+            (imageCapture)="handleImage($event)" [videoOptions]="videoOptions"
+            *ngIf="showWebcam" [imageQuality]="1"></webcam>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6" style="text-align: center">
+          <!--<div class="snapshot" *ngIf="webcamImage">-->
+            <!--<img id='hasil' [src]="webcamImage.imageAsDataUrl"/>-->
+            <!--<img id='upload' style="visibility: hidden" src="edourl"/>-->
+          <!--</div>-->
+        <div *ngIf="hasilFetch; else nopict">
+          <h3 style="text-align: center">
+            <h4><b>Data Pegawai:</b></h4>
+            {{dataPegawai[1]}} |
+            {{dataPegawai[2]}}
+            <!--{{hadir | date: "HH:mm:ss"}}--></h3>
+          <img id="noimage" [src]="hasilFetch" >
+        </div>
+
+        <ng-template #nopict>
+          <h3 style="text-align: center">
+            <h4><b>Data Pegawai:</b></h4>
+          ... | ...
+          </h3>
+          <img id="nopict" src="assets/img/no-profile.jpeg">
+        </ng-template>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center">
+    <ngx-spinner>
+      <h1 class="textLoading">Mencocokan wajah...</h1>
+      </ngx-spinner>
+    <div style="margin-top: 5%;">
+    <button class="btn" (click)="ambilGambar();" style="font-size: 20px">Klik untuk Absen</button>
+    </div>
+    <br>
+    <h1 class="statusAbsen">{{statusAbsen}}</h1>
+    <br>
+  </div>
+<br/>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

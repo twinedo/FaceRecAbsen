@@ -1,0 +1,16 @@
+.example-header-image {
+  background-image: url('https://universitaspertamina.ac.id/wp-content/uploads/2017/11/logo-Press.png');
+  size: 20%
+}
+
+#img2 {
+  width: 50%;
+  height: 50%;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+#box {
+  margin: 5%;
+  font-size: 14px;
+}

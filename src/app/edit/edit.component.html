@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+
+<body id="body">
+  <div id="upload-body">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2">
+          <img id=logo src="assets/img/logo_up_putih.png">
+        </div>
+        <div class="col-md-8">
+          <h2 style="text-align: center">
+            {{ title }}
+            Universitas Pertamina</h2>
+          <h4 style="text-align: center">https://siap.universitaspertamina.ac.id</h4>
+        </div>
+      </div>
+    </div>
+    <div id="box">
+      <div class="panel panel-default" style="border-radius: 10px;">
+        <div class="panel-heading" style="border-radius: 10px;">
+          <h3 style="text-align: center">Form Edit Presensi Pegawai</h3>
+        </div>
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="nama">Nama</label>
+              <br>
+              <select class='select-option' [(ngModel)]='optionSelected' name="option" (ngModelChange)='onOptionsSelected($event)'>
+                <option *ngFor="let d of data" value={{d.id}}>{{d.nama}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fotobaru">Tambahkan Foto*</label>
+              <input type="file"
+                     #fileInput
+                     name = "upload"
+                     id = "berkas"
+                     (change)="handleFileInput(fileInput.files)">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" (click)="toggleWebcam();">Toggle Webcam</button>
+            </div>
+            <div class="form-group" style="text-align: center">
+              <webcam [height]="400" [width]="400" [trigger]="triggerObservable"
+                      (imageCapture)="handleImage($event)" [videoOptions]="videoOptions"
+                      *ngIf="showWebcam" [imageQuality]="1">
+              </webcam>
+              <br>
+              <button *ngIf="showButton" class="btn btn-primary" (click)="ambilGambar();">Ambil Gambar</button>
+              <h4 id="showText">Hasil: </h4>
+              <img [height]="400" [width]="400" *ngIf="fileurl" id='upload' [src]="fileurl">
+            </div>
+            <div class="form-group" style="text-align: center">
+              <button type="submit" class="btn btn-primary" (click)=addPhoto()>Add Photo</button>
+              <h6 style="text-align: left">*Choose file atau via Webcam</h6>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

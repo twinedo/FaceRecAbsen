@@ -1,0 +1,44 @@
+.example-header-image {
+  background-image: url('https://universitaspertamina.ac.id/wp-content/uploads/2017/11/logo-Press.png');
+  size: 20%
+}
+
+#img2 {
+  width: 50%;
+  height: 50%;
+  margin-left: 5%;
+  margin-top: 10%;
+}
+
+#dashboard {
+  margin-left: 1%
+}
+
+#noimage {
+  width: 400px;
+  height: 400px;
+}
+
+#nopict {
+  width: 400px;
+  height: 400px;
+}
+
+.btn {
+  height: 48px;
+  width: 500px;
+  text-align: center;
+  /* background-color: #008CBA; */
+  background-color: greenyellow;
+  color: black;
+  font-weight: bold;
+}
+
+.statusAbsen {
+  color: red;
+}
+
+.textLoading {
+  color: white;
+}
+

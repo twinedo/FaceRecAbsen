@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background-image: url('src/assets/img/bg-1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
+}
+
