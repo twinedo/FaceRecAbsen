@@ -24,7 +24,7 @@
     "@sweetalert2/ngx-sweetalert2": "^5.1.0",
     "bootstrap": "^3.4.1",
     "face-api.js": "^0.20.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-spinner": "^8.0.3",
     "ngx-webcam": "^0.2.6",
     "rxjs": "~6.4.0",
